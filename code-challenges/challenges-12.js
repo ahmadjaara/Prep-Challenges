@@ -159,5 +159,24 @@ const skillComparison = (arr1, arr2) => {
 }
 
 
-module.exports = { oddFiltration, cvsFiltration, vowelsFiltration, skillComparison };
-
+//module.exports = { oddFiltration, cvsFiltration, vowelsFiltration, skillComparison };
+let arr123 =[1,2,2,3];
+function equalizeArray(arr123) {
+    // Write your code here
+   let arr1 =[]; 
+   for (let i=0;i<arr123.length;i++){
+       arr1[i]=arr123.filter(function (item,index){
+           if(arr123[i]==item){
+               return item;
+           }
+       })
+   }
+   
+   let arr2 =[];
+   arr2=arr1.map(function(item,index){
+       return item.length;
+   });
+  //return (Math.max(...arr2));
+   let n= arr123.length-Math.max(...arr2);
+   return n;
+}
