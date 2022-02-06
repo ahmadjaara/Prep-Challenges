@@ -107,40 +107,55 @@ const arrToStr = (arr) => {
 // help him by writing the function
 //
 // ------------------------
+//     for(let j=0;j<arr[i].length;j++){
+            
+    //         num =arr[i][j];
+    //         //count[num]=count[num]? count[num]+1:1;
+    //         if (arr[i].indexOf(num)!=arr[i].lastIndexOf(num)){
+    //             let x= arr[i].lastIndexOf(num)-arr[i].indexOf(num)+1;
+    //         //arr[i].splice(arr[i].indexOf(num)+1,arr[i].lastIndexOf(num)-arr[i].indexOf(num));
+    //         arr[i].splice(arr[i].indexOf(num)+1,arr[i].lastIndexOf(num)-arr[i].indexOf(num));
+    //         arr[i][j]+=x ;
+    //         }
+    //         else {
+    //             arr[i][j]+="1";
+    //         }
+    //     }
+        
+    // }
+    // for(let k =0;k<arr.length;k++){
+    //     arr[k]=arr[k].join("");
+    // }
 let str55="door";
 let str66="aaaa bbb sdf";
 let test2 = "Good morning";
+
 const letterCounter = (str) => {
     // write your code here
     let newstr = str.split(' ');
     //["aaaa","bbb", "sdf"]
     let arr =[];
-    let count ={};
-    let num ="";
+    
     for(let i=0;i<newstr.length;i++){
         arr[i]=newstr[i].split("");
-        
-        for(let j=0;j<arr[i].length;j++){
-            num =arr[i][j];
-            //count[num]=count[num]? count[num]+1:1;
-            if (arr[i].indexOf(num)!=arr[i].lastIndexOf(num)){
-                let x= arr[i].lastIndexOf(num)-arr[i].indexOf(num)+1;
+//       let num =' '  
+    for(let j =0;j<arr[i].length;j++){
+   
+   let  num =arr[i][j];
+    if(arr[i][j]==arr[i][j+1]){
+        if (arr[i].indexOf(num)!=arr[i].lastIndexOf(num)){
+            let x= arr[i].lastIndexOf(num)-arr[i].indexOf(num)+1;
             arr[i].splice(arr[i].indexOf(num)+1,arr[i].lastIndexOf(num)-arr[i].indexOf(num));
-            arr[i][j]+=x ;
-            }
-            else {
-                arr[i][j]+="1";
-            }
+            arr[i][j] +=x ;
         }
-        
-    }
-    for(let k =0;k<arr.length;k++){
+  }else {
+    arr[i][j]+="1";}
+}
+}
+for(let k =0;k<arr.length;k++){
         arr[k]=arr[k].join("");
     }
-
-    return arr.join(" ");
+return arr.join(" ");
 }
 
-
-
-//module.exports = { LastWord, LastWord_2, replaceWords, arrToStr, letterCounter };
+module.exports = { LastWord, LastWord_2, replaceWords, arrToStr, letterCounter };
